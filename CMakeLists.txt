@@ -4,7 +4,9 @@ cmake_minimum_required(VERSION 2.8.11)
 
 add_definitions(-std=c89 -ansi -pedantic)
 
-if(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+option(LOG_MULTIPART "Log multipart parse process" OFF)
+
+if(${LOG_MULTIPART})
   add_definitions(-DDEBUG_MULTIPART)
 endif()
 
